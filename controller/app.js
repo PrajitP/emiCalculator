@@ -3,12 +3,15 @@ var app = angular.module("myApp",["ngRoute","ui.bootstrap"]);
 app.config(function($routeProvider){
 	$routeProvider
 	.when("/main",{
-		templateUrl: "main.html",
+		templateUrl: "view/main.html",
 		controller : "mainCtrl"
 	})
 	.when("/emi",{
-		templateUrl: "emi_calculator.html",
+		templateUrl: "view/emi_calculator.html",
 		controller : "emiFormCtrl"
+	})
+	.when("/faq",{
+		templateUrl: "view/FAQ.html",
 	})
 	.otherwise({redirectTo:"/main"});
 });

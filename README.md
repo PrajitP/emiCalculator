@@ -11,8 +11,13 @@ python -m SimpleHTTPServer
 ```
 - Http server will start at 8000 port, in your browse URL paste
 ```
-http://localhost:8000/view/#/emi
+http://localhost:8000/
 ```
-## --- And there you go ---
 
-
+#How to use
+- Click on Emi tab at top left corner.
+- Fill the form.
+- Click "Update" button.
+- Edit/update any "Installment" section you want and recompute profit/loss and click "Update".
+- "Difference in Interest" section shows above profit/loss with respect to default EMI amount.
+- Click "Reset" when you want to clear all history.

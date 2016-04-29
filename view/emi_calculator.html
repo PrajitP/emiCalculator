@@ -51,6 +51,12 @@
 			<tr ng-repeat="( statistics, statisticsValue ) in overallStatistics">
 				<td> {{statistics}} </td> <td> {{statisticsValue}} </td>
 			</tr>
+			<tr ng-controller="emiFormCtrl">
+				<td>Interest with default EMI</td> <td> {{intrestForDefaultEmi}} </td>
+			</tr>
+			<tr ng-controller="emiFormCtrl">
+				<td>Difference in Interest</td> <td> {{diffIntrestWithDefaultEmi}} </td>
+			</tr>
 		</table>
 
 	</form>

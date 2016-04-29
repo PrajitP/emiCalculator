@@ -9,10 +9,14 @@ var emiFormCtrl = function($scope, $http){
 	$scope.interestRate 		= 10;		// Yearly interest rate
 	$scope.loanPeriod 			= 5;		// Loan period in months
 	$scope.installmentCycles 	= [];		// Will contain details about each installment cycle
+	$scope.isIntrestForDefaultEmiSet = 0;
 
 	$scope.resetEmi = function() {
 		$scope.installmentCycles = [];
 		$scope.overallStatistics = [];
+		$scope.intrestForDefaultEmi = 0;
+		$scope.isIntrestForDefaultEmiSet = 0;
+		$scope.diffIntrestWithDefaultEmi = 0;
 	}
 
 	$scope.updateEmi = function() {
@@ -24,6 +28,11 @@ var emiFormCtrl = function($scope, $http){
 		var result = calculateInstallment( $scope.installmentCycles, p, r, n, $scope.emi);
 		$scope.installmentCycles = result.installmentCycles;
 		$scope.overallStatistics = result.overallStatistics;
+		if($scope.isIntrestForDefaultEmiSet == 0){
+			$scope.intrestForDefaultEmi = result.overallStatistics['Total Interest'];
+			$scope.isIntrestForDefaultEmiSet = 1;
+		}
+		$scope.diffIntrestWithDefaultEmi = ($scope.intrestForDefaultEmi - result.overallStatistics['Total Interest']);
 	}
 
 	var calculateInstallment = function( installmentCycles, principleAmount, interestRate, loanPeriod, emi){
