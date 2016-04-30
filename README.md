@@ -1,5 +1,7 @@
+#How to try out without any setup
+http://prajitp.github.io/emiCalculator
 
-#How to setup
+#How to setup locally
 -  Download project directory on your client
 ```
 git init
